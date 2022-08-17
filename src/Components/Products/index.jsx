@@ -1,19 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { fetchProducts } from "../../services/startwars.service";
+import React, { useState } from "react";
 import ProductItem from "../ProductItem";
 
-export default function Products() {
-    const [products, setProducts] = useState([]);
-    const [filteredProducts, setFilteredProducts] = useState([]);
-
-    useEffect(() => {
-        async function fetchProductsData() {
-            const products = await fetchProducts();
-            setProducts(products);
-            setFilteredProducts(products);
-        }
-        fetchProductsData();
-    }, []);
+export default function Products({ products }) {
+    const [filteredProducts, setFilteredProducts] = useState(products);
 
     const filterHandler = (e) => {
         const { value } = e.target;
@@ -45,8 +34,12 @@ export default function Products() {
             </div>
             <div className="my-container">
                 {filteredProducts.length > 0 ? (
-                    filteredProducts.map((product) => (
-                        <ProductItem key={product.id} product={product} />
+                    filteredProducts.map((product, idx) => (
+                        <ProductItem
+                            key={product.id}
+                            product={product}
+                            idx={idx}
+                        />
                     ))
                 ) : (
                     <div>Loading Products...</div>

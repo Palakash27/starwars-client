@@ -1,0 +1,31 @@
+.admin-container {
+    margin: 50px 20px;
+}
+
+#products-table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#products-table td,
+#products-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#products-table tr:nth-child(even) {
+    background-color: #505050;
+}
+
+#products-table tr:hover {
+    background-color: #a89f9f;
+}
+
+#products-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #baad3f;
+    color: white;
+}
