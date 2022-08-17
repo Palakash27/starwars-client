@@ -1,30 +1,38 @@
 import React from "react";
 
+const IMAGES = {
+    "62fb38cb39cc2ed9eab86fad":
+        "https://cdn-ssl.s7.disneystore.com/is/image/DisneyShopping/6505059616640?fmt=jpeg&qlt=90&wid=512&hei=512",
+    "62fb38cb39cc2ed9eab86faa":
+        "https://cdn-ssl.s7.disneystore.com/is/image/DisneyShopping/6505059617296?fmt=jpeg&qlt=90&wid=512&hei=512",
+    "62fb38cb39cc2ed9eab86fab":
+        "https://cdn-ssl.s7.disneystore.com/is/image/DisneyShopping/2140058384542?fmt=jpeg&qlt=90&wid=512&hei=512",
+    "62fb38cb39cc2ed9eab86fac":
+        "https://cdn-ssl.s7.disneystore.com/is/image/DisneyShopping/6720107063674?fmt=jpeg&qlt=90&wid=512&hei=512",
+    "62fb38cb39cc2ed9eab86fae":
+        "https://cdn-ssl.s7.disneystore.com/is/image/DisneyShopping/6720107063673?fmt=jpeg&qlt=90&wid=512&hei=512",
+};
+
 export default function ProductItem({ product }) {
     return (
-        <>
-            <form class="product-card" method="POST" action="cart.php">
-                <img
-                    class="product-img img-one"
-                    src="https://cdn-ssl.s7.disneystore.com/is/image/DisneyShopping/6720107063673?fmt=jpeg&amp;qlt=90&amp;wid=512&amp;hei=512"
-                    alt="product-img"
-                />
-                <div class="product-text">
-                    <div class="product-detail-overview">
-                        <h3>{product.name}</h3>
-                        <h4>${product.price}</h4>
-                    </div>
-                    <div class="text-left text-medium font-medium my-2">
-                        {product.category}
-                    </div>
-                    <p class="text-left">{product.description}</p>
+        <div className="product-card">
+            <img
+                className="product-img img-one"
+                src={IMAGES[product.id]}
+                alt="product-img"
+            />
+            <div className="product-text">
+                <div className="product-detail-overview">
+                    <h3>{product.name}</h3>
+                    <h4>${product.price}</h4>
                 </div>
-                <div class="product-cart">
-                    <button type="submit" name="action" value="add">
-                        <b>ADD TO CART</b>
-                    </button>
-                </div>
-            </form>
-        </>
+                <p className="text-left">{product.description}</p>
+            </div>
+            <div className="product-cart">
+                <button type="submit" name="action" value="add">
+                    <b>{product.category}</b>
+                </button>
+            </div>
+        </div>
     );
 }

@@ -1,9 +1,10 @@
 import React from "react";
+import CustomCarousel from "../CustomCarousel";
 
 export default function Home() {
     return (
         <div>
-            <div class="content">
+            <div className="content">
                 <h1>Star Wars</h1>
                 <p>
                     Star Wars is an American epic space-opera multimedia
@@ -18,8 +19,9 @@ export default function Home() {
                     media franchise of all time.
                 </p>
             </div>
+            <CustomCarousel />
             <h2>How to watch the Star Wars movies in chronological order:</h2>
-            <div class="timeline">
+            <div className="timeline">
                 <p>Episode I: The Phantom Menace (1999)</p>
                 <p>Episode II: Attack of the Clones (2002)</p>
                 <p>Star Wars: The Clone Wars (2008-2020)</p>
